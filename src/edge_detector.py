@@ -65,7 +65,6 @@ def listen_for_images():
 def publish_edge():
     global image_edges_ros
     global pub
-    #rate = rospy.Rate(comm_freq) # Hz
 
     # public 
     pub.publish(image_edges_ros)
