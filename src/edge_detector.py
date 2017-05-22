@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 """
-KEIVAN . ZAVARI @ GMAIL.COM
+Author: KEIVAN . ZAVARI
 """
 
 import rospy
@@ -15,6 +15,9 @@ image_edges_ros = Image()
 pub = rospy.Publisher('edge_detector', Image, queue_size=10)
 # ----------------
 
+
+
+# ----------------
 
 def callback(data):
     global show_edge_image
@@ -48,6 +51,7 @@ def callback(data):
     publish_edge()
 
 
+# ----------------
 
 def listen_for_images():
     # topic name, checked with cv_camera
@@ -61,6 +65,7 @@ def listen_for_images():
     # keep python from exiting until this node is stopped 
     rospy.spin()
 
+# ----------------
 
 def publish_edge():
     global image_edges_ros
@@ -68,6 +73,9 @@ def publish_edge():
 
     # public 
     pub.publish(image_edges_ros)
+
+
+# ----------------
 
 if __name__ == '__main__':
     try:
